@@ -1,11 +1,15 @@
-use axum::{Router, routing::get};
+mod helloasso;
 
 #[tokio::main]
 async fn main() {
-    // build our application with a single route
-    let app = Router::new().route("/", get(|| async { "Hello, World!" }));
+    let client_id = "7cd522dd834e49b5bc26c6efd0cf4293";
+    let client_secret = "y8QjUzceThp2jrriEs0rsutFB2tfITML";
 
-    // run our app with hyper, listening globally on port 3000
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    axum::serve(listener, app).await.unwrap();
+    let client = helloasso::api::ClientAPI::new("https://api.helloasso.com").unwrap();
+    let token = client
+        .request_token(client_id.into(), client_secret.into())
+        .await
+        .unwrap();
+
+    println!("{token:?}");
 }
