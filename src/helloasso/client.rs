@@ -8,6 +8,7 @@ pub struct HelloAsso {
     access_token: String,
     refresh_token: String,
     expiration: DateTime<Utc>,
+    organisation_slug: String,
 }
 
 impl HelloAsso {
