@@ -126,6 +126,7 @@ dependencies = [
  "iana-time-zone",
  "js-sys",
  "num-traits",
+ "serde",
  "wasm-bindgen",
  "windows-link",
 ]
@@ -442,6 +443,7 @@ dependencies = [
  "helloasso",
  "reqwest 0.13.2",
  "serde",
+ "serde_json",
  "tokio",
  "url",
 ]
