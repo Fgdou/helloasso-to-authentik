@@ -7,7 +7,7 @@ use helloasso_api::{
     models::HelloAssoApiV5CommonModelsStatisticsItemCustomField,
 };
 
-use crate::helloasso::api::ClientAPI;
+use crate::helloasso::auth_api::ClientAPI;
 
 #[derive(Debug)]
 pub struct HelloAsso {
